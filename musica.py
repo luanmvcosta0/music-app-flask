@@ -5,7 +5,10 @@ app = Flask(__name__)
 
 @app.route("/musicas")
 def listar_musicas():
-    return render_template("lista_musicas.html")
+
+    lista = ["KGL", "Loira de medicina", "Havaiana Branca", "Ousadia e Alegria"]
+
+    return render_template("lista_musicas.html", musicas=lista)
 
 
-app.run()
+app.run(debug=True)

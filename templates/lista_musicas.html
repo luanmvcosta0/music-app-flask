@@ -23,23 +23,13 @@
       <th>Genero</th>
     </tr>
 
+    {% for musica in musicas %}
     <tr>
-      <td>Ousadia e Alegria</td>
-      <td>Thiaguinho</td>
-      <td>Pagode</td>
+      <td>{{ musica }}</td>
+      <td></td>
+      <td></td>
     </tr>
-
-    <tr>
-      <td>Barras e Barras</td>
-      <td>Derek</td>
-      <td>Trap</td>
-    </tr>
-
-    <tr>
-      <td>Meus filhos</td>
-      <td>Leviano</td>
-      <td>Trap</td>
-    </tr>
+    {% endfor %}
 
   </table>
 
