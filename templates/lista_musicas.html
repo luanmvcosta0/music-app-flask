@@ -25,9 +25,9 @@
 
     {% for musica in musicas %}
     <tr>
-      <td>{{ musica }}</td>
-      <td></td>
-      <td></td>
+      <td>{{ musica.nome }}</td>
+      <td>{{ musica.cantorBanda }}</td>
+      <td>{{ musica.genero }}</td>
     </tr>
     {% endfor %}
 
