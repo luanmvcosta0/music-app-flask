@@ -22,5 +22,7 @@ def listar_musicas():
 
     return render_template("lista_musicas.html", musicas=lista)
 
+@app.route("/cadastrar")
+
 
 app.run(debug=True)
