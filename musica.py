@@ -18,17 +18,9 @@ lista = [musica01, musica02, musica03]
 app = Flask(__name__)
 
 
-@app.route("/musicas")
+@app.route("/")
 def listar_musicas():
-
     return render_template("lista_musicas.html", musicas=lista)
-
-
-@app.route("/cadastrar")
-def cadastrar_musica():
-    return render_template(
-        "cadastra_musica.html",
-    )
 
 
 @app.route(
