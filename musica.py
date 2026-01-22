@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 
 class Musica:
@@ -8,17 +8,18 @@ class Musica:
         self.genero = genero
 
 
+musica01 = Musica("Loira de Medicina", "G.A", "Trap")
+musica02 = Musica("Papai Banca", "MC Ryan SP", "Funk")
+musica03 = Musica("Camisa 10", "Turma do Pagode", "Pagode")
+
+lista = [musica01, musica02, musica03]
+
+
 app = Flask(__name__)
 
 
 @app.route("/musicas")
 def listar_musicas():
-
-    musica01 = Musica("Loira de Medicina", "G.A", "Trap")
-    musica02 = Musica("Papai Banca", "MC Ryan SP", "Funk")
-    musica03 = Musica("Camisa 10", "Turma do Pagode", "Pagode")
-
-    lista = [musica01, musica02, musica03]
 
     return render_template("lista_musicas.html", musicas=lista)
 
@@ -28,6 +29,24 @@ def cadastrar_musica():
     return render_template(
         "cadastra_musica.html",
     )
+
+
+@app.route(
+    "/adicionar",
+    methods=[
+        "POST",
+    ],
+)
+def adicionar_musica():
+    nome = request.form["txtNome"]
+    cantorBanda = request.form["txtCantor"]
+    genero = request.form["txtGenero"]
+
+    novaMusica = Musica(nome, cantorBanda, genero)
+
+    lista.append(novaMusica)
+
+    return render_template("lista_musicas.html", musicas=lista)
 
 
 app.run(debug=True)
