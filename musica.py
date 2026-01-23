@@ -65,4 +65,11 @@ def autenticar():
         return redirect("login")
 
 
+@app.route("/encerrar_sessao")
+def encerrar_sessao():
+    session["usuario_logado"] = None
+
+    return redirect("/")
+
+
 app.run(debug=True)
