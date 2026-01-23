@@ -20,12 +20,15 @@
 
   <table>
 
-    <tr>
-      <th>Musica</th>
-      <th>Cantor / Grupo / Banda</th>
-      <th>Genero</th>
-    </tr>
+    <thead>
+      <tr>
+        <th>Musica</th>
+        <th>Cantor / Grupo / Banda</th>
+        <th>Genero</th>
+      </tr>
+  </thead>
 
+  <tbody>
     {% for musica in musicas %}
     <tr>
       <td>{{ musica.nome }}</td>
@@ -33,6 +36,7 @@
       <td>{{ musica.genero }}</td>
     </tr>
     {% endfor %}
+  </tbody>
 
   </table>
 
